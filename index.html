@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>For You ❤️</title>
+
+  <meta name="theme-color" content="#2a0b16" />
+  <meta name="description" content="A special proposal website." />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <audio id="bgMusic" autoplay loop preload="auto">
+    <source src="assets/music/meri-banogi-kya.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="background-glow"></div>
+  <div id="floatingHearts"></div>
+
+  <main class="app">
+
+    <!-- SCREEN 1 -->
+    <section class="screen active" id="screen1">
+      <div class="card">
+
+        <img
+          src="assets/gifs/panda-hello.gif"
+          alt="Cute panda"
+          class="main-gif"
+        />
+
+        <h1>Hey!</h1>
+
+        <p class="subtitle">
+          I want to ask you something?
+        </p>
+
+        <p class="small-text">Can I?</p>
+
+        <div class="button-group">
+          <button class="btn primary-btn" onclick="showScreen(3)">
+            YES
+          </button>
+
+          <button class="btn secondary-btn" onclick="showScreen(2)">
+            NO
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SCREEN 2 -->
+    <section class="screen" id="screen2">
+      <div class="card">
+
+        <img
+          src="assets/gifs/angry-cat.gif"
+          alt="Angry cat"
+          class="main-gif"
+        />
+
+        <h2>How Dare You!</h2>
+
+        <p class="small-text">
+          I will go back so you can say YES!
+        </p>
+
+        <button class="btn primary-btn" onclick="showScreen(1)">
+          Go Back
+        </button>
+
+      </div>
+    </section>
+
+    <!-- SCREEN 3 -->
+    <section class="screen" id="screen3">
+      <div class="card">
+
+        <img
+          src="assets/gifs/panda-hug.gif"
+          alt="Cute hug"
+          class="main-gif"
+        />
+
+        <h2>Good, My Cutiepie 😍</h2>
+
+        <p class="subtitle">
+          Most important question...
+        </p>
+
+        <p class="small-text">
+          Are you ready?
+        </p>
+
+        <button class="btn primary-btn" onclick="showScreen(4)">
+          Yes, I am ready
+        </button>
+
+      </div>
+    </section>
+
+    <!-- SCREEN 4 -->
+    <section class="screen" id="screen4">
+      <div class="card valentine-card">
+
+        <img
+          src="assets/gifs/love-panda.gif"
+          alt="Love panda"
+          class="main-gif"
+        />
+
+        <h2>Will You Be My Valentine?</h2>
+
+        <div class="options-grid">
+
+          <button class="option-btn" onclick="showScreen(5)">
+            <span>A</span>
+            Yes
+          </button>
+
+          <button class="option-btn" onclick="showScreen(5)">
+            <span>B</span>
+            Absolutely
+          </button>
+
+          <button class="option-btn" onclick="showScreen(5)">
+            <span>C</span>
+            Of Course
+          </button>
+
+          <button class="option-btn" onclick="showScreen(5)">
+            <span>D</span>
+            Forever
+          </button>
+
+        </div>
+
+        <p class="tiny-text">
+          Pick any option, they are all correct 💗
+        </p>
+
+      </div>
+    </section>
+
+    <!-- SCREEN 5 -->
+    <section class="screen" id="screen5">
+      <div class="card gift-card">
+
+        <h2>This Is For You 😍</h2>
+
+        <div class="gift-content">
+
+          <img
+            src="assets/images/bouquet.png"
+            alt="Flower bouquet"
+            class="bouquet-img"
+          />
+
+          <div class="love-languages">
+
+            <div class="language-box">
+              <small>ENGLISH</small>
+              <strong>I Love You</strong>
+            </div>
+
+            <div class="language-box">
+              <small>HINDI</small>
+              <strong>मैं तुमसे प्यार करता हूँ</strong>
+            </div>
+
+            <div class="language-box">
+              <small>BENGALI</small>
+              <strong>আমি তোমাকে ভালোবাসি</strong>
+            </div>
+
+            <div class="language-box">
+              <small>FRENCH</small>
+              <strong>Je T'aime</strong>
+            </div>
+
+            <div class="language-box">
+              <small>SPANISH</small>
+              <strong>Te Amo</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+        <button class="btn primary-btn" onclick="showScreen(6)">
+          One Last Thing
+        </button>
+
+      </div>
+    </section>
+
+    <!-- SCREEN 6 -->
+    <section class="screen" id="screen6">
+      <div class="card final-card">
+
+        <img
+          src="assets/gifs/envelope.gif"
+          alt="Love letter"
+          class="main-gif envelope-gif"
+        />
+
+        <p class="tagline">MERI DIL KI BAAT</p>
+
+        <h2>There Is A Letter For You</h2>
+
+        <p class="small-text">
+          Read it till the end.
+        </p>
+
+        <button class="btn primary-btn letter-btn" onclick="openLetter()">
+          [ LETTER ]
+        </button>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LETTER MODAL -->
+  <div class="letter-modal" id="letterModal">
+
+    <div class="letter-box">
+
+      <button class="close-btn" onclick="closeLetter()">
+        ×
+      </button>
+
+      <div class="letter-heart">💗</div>
+
+      <p class="letter-to">
+        Dear <span id="crushName">Cutie</span>,
+      </p>
+
+      <h2>Meri Dil Ki Baat...</h2>
+
+      <div class="letter-content">
+
+        <p>
+          Pata nahi kab tum meri normal si zindagi ka
+          sabse khoobsurat hissa ban gayi.
+        </p>
+
+        <p>
+          Tumhari ek smile mera pura din accha kar deti hai,
+          aur tumse baat hona mere din ka favourite moment ban gaya hai.
+        </p>
+
+        <p>
+          Main perfect nahi hoon, lekin tumhari respect karunga,
+          tumhara saath dunga aur har situation mein honestly
+          tumhare saath khada rahunga.
+        </p>
+
+        <p class="proposal-text">
+          Kya tum meri zindagi ka sabse pyaara chapter banogi?
+        </p>
+
+      </div>
+
+      <h3>Meri Banogi Kya? 💍</h3>
+
+      <div class="button-group final-buttons">
+
+        <button class="btn primary-btn" onclick="acceptProposal()">
+          Haan ❤️
+        </button>
+
+        <button class="btn secondary-btn moving-no" id="finalNo">
+          Nahi
+        </button>
+
+      </div>
+
+      <p class="signature">
+        — Yours,
+        <span id="yourName">ASMIT</span>
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- FINAL CELEBRATION -->
+  <div class="celebration" id="celebration">
+
+    <div class="celebration-content">
+
+      <div class="ring-emoji">💍</div>
+
+      <h2>Yayyyyy! 💖</h2>
+
+      <p>
+        You just made me the happiest person alive.
+      </p>
+
+      <h1>I LOVE YOU</h1>
+
+    </div>
+
+  </div>
+
+  <button class="music-btn" id="musicBtn">
+    ♪
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
