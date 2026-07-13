@@ -50,6 +50,13 @@ function showScreen(screenNumber) {
 
   setTimeout(() => {
     next.classList.add("active");
+     if (screenNumber === 4) {
+    document.querySelectorAll("#screen4 .option-btn").forEach(btn => {
+        btn.style.animation = "none";
+        btn.offsetHeight; // Force reflow
+        btn.style.animation = "";
+    });
+     }
     currentScreen = screenNumber;
 
     createHearts(8);
